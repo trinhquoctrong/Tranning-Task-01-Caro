@@ -1,10 +1,8 @@
-import React, { FormEvent, useEffect, useRef, useState } from "react";
-import "./Caro.scss";
+import React, { FormEvent, useState } from "react";
 import Board from "./Board";
 import { winnerHelper } from "../helper/winnerHelper";
 import { initBoard } from "../helper/initHelper";
 import styled from "styled-components";
-import { Alert, Modal } from "antd";
 
 export type Board = {
   size: number;
@@ -58,8 +56,6 @@ const Caro = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTmpSize(parseInt(e.target.value));
   };
-
-  const [visible, setVisible] = useState(false);
 
   return (
     <>
