@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { CaroBoardProps } from "../../interface/CaroStyled";
+import React from "react";
 
 type BoardProps = {
   board: string[][];
@@ -40,7 +41,7 @@ const Board = (props: BoardProps) => {
     <>
       <CaroBoard size={props.size}>
         {props.board.map((row, index_row) => (
-          <>
+          <React.Fragment key={index_row}>
             {row.map((item, index_col) => (
               <>
                 <CaroCol
@@ -57,7 +58,7 @@ const Board = (props: BoardProps) => {
                 </CaroCol>
               </>
             ))}
-          </>
+          </React.Fragment>
         ))}
       </CaroBoard>
     </>
